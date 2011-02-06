@@ -1,0 +1,414 @@
+Company:
+  tableName: tt_company
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(2)
+      unsigned: true
+    name:
+      type: string(100)
+      notnull: true
+    description:
+      type: clob(65532)
+
+Customer:
+  tableName: tt_customer
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(2)
+      unsigned: true
+    company_id:
+      type: integer(2)
+      notnull: true
+      unsigned: true
+    name:
+      type: string(100)
+      notnull: true
+    description:
+      type: clob(65532)
+  relations:
+    Company:
+      onDelete: CASCADE
+      foreignAlias: Projects
+
+Project:
+  tableName: tt_project
+  actAs:
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(2)
+      unsigned: true
+    company_id:
+      type: integer(2)
+      notnull: true
+      unsigned: true
+    customer_id:
+      type: integer(2)
+      notnull: true
+      unsigned: true
+    currency_id:
+      type: integer(1)
+      notnull: true
+      unsigned: true
+    code:
+      type: string(20)
+      notnull: true
+    name:
+      type: string(100)
+      notnull: true
+    description:
+      type: clob(65532)
+    start_date:
+      type: date
+      notnull: true
+    day_hours:
+      type: integer(1)
+      notnull: true
+      unsigned: true
+      default: 8
+    is_archived:
+      type: boolean
+      default: false
+  relations:
+    Company:
+      onDelete: CASCADE
+      foreignAlias: Projects
+    Customer:
+      onDelete: CASCADE
+      foreignAlias: Projects
+    Currency: ~
+
+Module:
+  tableName: tt_module
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(2)
+      unsigned: true
+    project_id:
+      type: integer(2)
+      notnull: true
+      unsigned: true
+    name:
+      type: string(100)
+      notnull: true
+  relations:
+    Project:
+      onDelete: CASCADE
+      foreignAlias: Modules
+
+ProjectUser:
+  tableName: tt_project_user
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(1)
+      unsigned: true
+    project_id:
+      type: integer(2)
+      notnull: true
+      unsigned: true
+    user_id:
+      type: integer(2)
+      notnull: true
+      unsigned: true
+    permission_id:
+      type: integer(1)
+      notnull: true
+      unsigned: true
+  relations:
+    Project:
+      onDelete: CASCADE
+      foreignAlias: ProjectUsers
+    User:
+      onDelete: CASCADE
+      local: user_id
+      class: sfGuardUser
+      foreignAlias: ProjectUsers
+    Permission:
+      local: permission_id
+      class: sfGuardPermission
+  indexes:
+    unique_project_user_perm:
+      fields: [project_id, user_id, permission_id]
+      type: unique
+
+Currency:
+  tableName: tt_currency
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(1)
+      unsigned: true
+    name:
+      type: string(20)
+      notnull: true
+    symbol:
+      type: string(10)
+      notnull: true
+
+Profile:
+  tableName: tt_profile
+  actAs:
+    I18n:
+      fields: [code, name]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(1)
+      unsigned: true
+    code:
+      type: string(10)
+      notnull: true
+    name:
+      type: string(100)
+      notnull: true
+
+Milestone:
+  tableName: tt_milestone
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(2)
+      unsigned: true
+    project_id:
+      type: integer(2)
+      notnull: true
+      unsigned: true
+    name:
+      type: string(100)
+      notnull: true
+    description:
+      type: clob(65532)
+    start_date:
+      type: date
+    end_date:
+      type: date
+    position:
+      type: integer(1)
+      notnull: true
+      unsigned: true
+      default: 0
+  relations:
+    Project:
+      onDelete: CASCADE
+      foreignAlias: Milestones
+
+MilestoneProfile:
+  tableName: tt_milestone_profile
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(2)
+      unsigned: true
+    milestone_id:
+      type: integer(2)
+      notnull: true
+      unsigned: true
+    profile_id:
+      type: integer(1)
+      notnull: true
+      unsigned: true
+    cost:
+      type: integer(2)
+      notnull: true
+      unsigned: true
+  relations:
+    Milestone:
+      onDelete: CASCADE
+      foreignAlias: MilestoneProfiles
+    Profile:
+      onDelete: CASCADE
+      foreignAlias: MilestoneProfiles
+
+Task:
+  tableName: tt_task
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(3)
+      unsigned: true
+    milestone_id:
+      type: integer(2)
+      notnull: true
+      unsigned: true
+    module_id:
+      type: integer(2)
+      notnull: true
+      unsigned: true
+    priority_id:
+      type: integer(1)
+      notnull: true
+      unsigned: true
+    name:
+      type: string(100)
+      notnull: true
+    comment:
+      type: clob(65532)
+  relations:
+    Milestone:
+      onDelete: CASCADE
+      foreignAlias: Tasks
+    Priority: ~
+    Module:
+      onDelete: CASCADE
+    Predecessors:
+      class: Task
+      foreign: predecessor_id
+      local: task_id
+      refClass: Predecessor
+      foreignAlias: Predecessors
+
+Priority:
+  tableName: tt_priority
+  actAs:
+    I18n:
+      fields: [name]
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(1)
+      unsigned: true
+    class:
+      type: string(20)
+      notnull: true
+      unique: true
+    name:
+      type: string(50)
+      notnull: true
+
+Assignment:
+  tableName: tt_assignment
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(3)
+      unsigned: true
+    task_id:
+      type: integer(3)
+      notnull: true
+      unsigned: true
+    user_id:
+      type: integer(2)
+      unsigned: true
+    profile_id:
+      type: integer(1)
+      notnull: true
+      unsigned: true
+    time_estimated:
+      type: decimal(5)
+      scale: 3
+      notnull: true
+      default: 0
+    time_allocated:
+      type: decimal(5)
+      scale: 3
+      notnull: true
+      default: 0
+    is_completed:
+      type: boolean
+      default: false
+  relations:
+    User:
+      local: user_id
+      class: sfGuardUser
+    Task:
+      onDelete: CASCADE
+      foreignAlias: Assignments
+    Profile:
+      onDelete: CASCADE
+      foreignAlias: Assignments
+  indexes:
+    unique_task_user_profile:
+      fields: [task_id, user_id, profile_id]
+      type: unique
+
+Predecessor:
+  tableName: tt_predecessor
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(3)
+      unsigned: true
+    task_id:
+      type: integer(3)
+      notnull: true
+      unsigned: true
+    predecessor_id:
+      type: integer(3)
+      notnull: true
+      unsigned: true
+  relations:
+    Task:
+      onDelete: CASCADE
+      autoComplete: false
+    Predecessor:
+      onDelete: CASCADE
+      class: Task
+      local: predecessor_id
+      autoComplete: false
+
+Input:
+  tableName: tt_input
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(3)
+      unsigned: true
+    assignment_id:
+      type: integer(3)
+      notnull: true
+      unsigned: true
+    date:
+      type: date
+      notnull: true
+    time_spent:
+      type: decimal(5)
+      scale: 3
+      notnull: true
+    time_left:
+      type: decimal(5)
+      scale: 3
+      notnull: true
+    comment:
+      type: clob(65532)
+  relations:
+    Assignment:
+      onDelete: CASCADE
+      foreignAlias: Inputs
+  indexes:
+    unique_input_a_day:
+      fields: [assignment_id, date]
+      type: unique
+
+Theme:
+  tableName: tt_theme
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(1)
+      unsigned: true
+    folder:
+      type: string(50)
+      notnull: true
+    name:
+      type: string(50)
+      notnull: true

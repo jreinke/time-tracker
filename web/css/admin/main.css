@@ -1,0 +1,22 @@
+body.login tfoot {
+  background-color: #eee;
+}
+
+.ui-tabs {
+  padding: 0;
+  position: static;
+}
+
+.messages {
+  padding: 0 .7em;
+  margin-bottom: 10px;
+}
+
+.messages p {
+  margin: 8px 0;
+}
+
+.messages span {
+  float: left;
+  margin-right: .3em;
+}

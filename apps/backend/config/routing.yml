@@ -1,0 +1,154 @@
+profile:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Profile
+    module:               profile
+    prefix_path:          /profile
+    column:               id
+    with_wildcard_routes: true
+
+module:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Module
+    module:               module
+    prefix_path:          /module
+    column:               id
+    with_wildcard_routes: true
+
+priority:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Priority
+    module:               priority
+    prefix_path:          /priority
+    column:               id
+    with_wildcard_routes: true
+
+project_user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ProjectUser
+    module:               project_user
+    prefix_path:          /project-user
+    column:               id
+    with_wildcard_routes: true
+
+sf_guard_user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sfGuardUser
+    module:               user
+    prefix_path:          /user
+    column:               id
+    with_wildcard_routes: true
+
+company:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Company
+    module:               company
+    prefix_path:          /company
+    column:               id
+    with_wildcard_routes: true
+
+milestone_profile:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                MilestoneProfile
+    module:               milestone_profile
+    prefix_path:          /milestone-profile
+    column:               id
+    with_wildcard_routes: true
+
+assignment:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Assignment
+    module:               assignment
+    prefix_path:          /assignment
+    column:               id
+    with_wildcard_routes: true
+
+input:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Input
+    module:               input
+    prefix_path:          /input
+    column:               id
+    with_wildcard_routes: true
+
+task:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Task
+    module:               task
+    prefix_path:          /task
+    column:               id
+    with_wildcard_routes: true
+
+customer:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Customer
+    module:               customer
+    prefix_path:          /customer
+    column:               id
+    with_wildcard_routes: true
+
+currency:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Currency
+    module:               currency
+    prefix_path:          /currency
+    column:               id
+    with_wildcard_routes: true
+
+milestone:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Milestone
+    module:               milestone
+    prefix_path:          /milestone
+    column:               id
+    with_wildcard_routes: true
+
+project:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Project
+    module:               project
+    prefix_path:          /project
+    column:               id
+    with_wildcard_routes: true
+
+user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sfGuardUser
+    module:               user
+    prefix_path:          /user
+    column:               id
+    with_wildcard_routes: true
+
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: project, action: index }

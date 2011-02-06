@@ -1,0 +1,284 @@
+body, select, textarea, input, button {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+
+th, td, caption {
+  padding: 4px 6px;
+}
+
+input {
+  font-family: Arial, sans-serif;
+}
+
+textarea {
+  padding: 0;
+  height: 60px;
+  width: 300px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+tfoot {
+  background-color: #ccc;
+}
+
+tfoot td {
+  font-style: normal;
+  font-weight: bold;
+}
+
+table input[type="checkbox"],
+table input[type="radio"],
+table input.checkbox,
+table input.radio {
+  top: 0;
+  margin: 0;
+}
+
+#menu.ui-widget-content {
+  border: 0;
+}
+
+#sf_admin_list_batch_actions,
+#sf_admin_list_th_actions,
+.sf_admin_list_th_id {
+  width: 1%;
+}
+
+#sf_admin_list_batch_checkbox,
+#sf_admin_container .sf_admin_batch_checkbox {
+  margin: 0;
+}
+
+#sf_admin_container ul.sf_admin_td_actions {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#sf_admin_container ul.sf_admin_actions {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  line-height: 32px;
+}
+
+#sf_admin_container ul.sf_admin_actions li {
+  list-style-type: none;
+  float: left;
+  margin-right: 10px;
+}
+
+#sf_admin_container ul.sf_admin_actions li a,
+#sf_admin_container ul.sf_admin_td_actions li a {
+  padding: 2px 0 2px 20px;
+  background: url(../images/default.png) no-repeat 0 0;
+}
+
+#sf_admin_container ul li.sf_admin_action_new a {
+  background: url(../images/new.png) no-repeat 0 0;
+}
+
+#sf_admin_container ul.sf_admin_td_actions li.sf_admin_action_delete a,
+#sf_admin_container ul.sf_admin_actions li.sf_admin_action_delete a {
+  background: url(../images/delete.png) no-repeat 0 0;
+}
+
+#sf_admin_container ul.sf_admin_td_actions li.sf_admin_action_list a {
+  background: url(../images/list.png) no-repeat 0 0;
+}
+
+#sf_admin_container ul.sf_admin_td_actions li.sf_admin_action_edit a {
+  background: url(../images/edit.png) no-repeat 0 0;
+}
+
+#sf_admin_container ul.sf_admin_td_actions li.sf_admin_action_move a {
+  background: url(../images/move.png) no-repeat 0 0;
+}
+
+#header {
+  height: 32px;
+  line-height: 32px;
+}
+
+body.login .container {
+  padding-top: 200px;
+}
+
+body.login .ui-widget-content {
+  padding: 0.2em 0.2em 0;
+}
+
+body.login h2 {
+  padding-left: 8px;
+}
+
+body.login tfoot td {
+  text-align: center;
+}
+
+body.login th {
+  text-align: right;
+}
+
+body.login #signin_remember {
+  vertical-align: middle;
+}
+
+.ui-widget,
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+
+.ui-tabs {
+  padding: 0;
+  position: static;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.right {
+  text-align: right;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.compact {
+  width: 1%;
+}
+
+.fleft {
+  float: left;
+}
+
+.fright {
+  float: right;
+}
+
+.no-border {
+  border: none;
+}
+
+.no-bg {
+  background: none;
+}
+
+.em {
+  font-style: italic;
+}
+
+.border-left-bold {
+  border-left-width: 2px !important;
+}
+
+.border-right-bold {
+  border-right-width: 2px !important;
+}
+
+.error_list {
+  color: red;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sf_admin_filter {
+  padding: 1em;
+  margin-bottom: 1.5em;
+  background: #e5ecf9;
+}
+
+.sf_admin_filter table {
+  width: auto;
+  margin-bottom: 0;
+}
+
+.sf_admin_filter input[type="text"],
+.sf_admin_filter select {
+  margin: 0 0 2px 0;
+  max-width: 200px;
+}
+
+.sf_admin_filter tfoot {
+  background: none;
+}
+
+.sf_admin_filter tfoot td {
+  font-weight: normal;
+}
+
+.sf_admin_form .sf_admin_text input {
+  width: 300px;
+}
+
+.sf_admin_form .sf_admin_form_row select {
+  max-width: 300px;
+}
+
+.milestone-costs table {
+  width: auto;
+  margin: 0;
+}
+
+.sf_admin_form  .sf_admin_form_field_costs td input,
+input#assignment_time_estimated,
+input#assignment_time_allocated {
+  width: 60px;
+}
+
+tr.odd td.low,
+tr.even td.low,
+td.low {
+  background-color: #99cc33;
+}
+
+tr.odd td.medium,
+tr.even td.medium,
+td.medium {
+  background-color: #ffdd00;
+}
+
+tr.odd td.major,
+tr.even td.major,
+td.major {
+  background-color: #ff9900;
+}
+
+tr.odd td.showstopper,
+tr.even td.showstopper,
+td.showstopper {
+  background-color  : #ef0000;
+}
+
+tr.ui-sortable-helper td {
+  background-color: #feff7f;
+}
+
+tr.bold td {
+  font-weight: bold;
+}
+
+#chart {
+  font-size: 1.25em;
+}
+
+table.jqplot-table-legend {
+  width: auto;
+  border-collapse: separate;
+  padding: 4px;
+}
+
+table.jqplot-table-legend td {
+  padding: 0 2px;
+}

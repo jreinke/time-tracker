@@ -1,0 +1,23 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Project
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          project
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:                   false
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [ Company, Customer, code, =name, description, start_date, is_archived ]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

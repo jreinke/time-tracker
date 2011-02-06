@@ -1,0 +1,10 @@
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=@DB_HOST@;dbname=@DB_NAME@
+      username: @DB_USER@
+      password: "@DB_PASSWORD@"
+      attributes:
+        default_table_collate: utf8_general_ci
+        default_table_charset: utf8

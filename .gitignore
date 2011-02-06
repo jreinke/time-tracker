@@ -1,0 +1,14 @@
+.DS_Store
+.settings
+.buildpath
+.project
+/config/databases.yml
+/cache/
+/log/
+/data/
+/lib/filter/doctrine/base/*
+/lib/filter/doctrine/sfDoctrineGuardPlugin/base/*
+/lib/form/doctrine/base/*
+/lib/form/doctrine/sfDoctrineGuardPlugin/base/*
+/lib/model/doctrine/base/*
+/lib/model/doctrine/sfDoctrineGuardPlugin/base/*

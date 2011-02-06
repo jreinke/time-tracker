@@ -1,0 +1,218 @@
+ajax_assignment_delete:
+  class: sfDoctrineRoute
+  url: /task/delete-assignment/:id
+  param:
+    module: task
+    action: deleteAssignment
+  options:
+    model: Assignment
+    type: object
+  requirements:
+    id: \d+
+    sf_method: [get]
+
+task_assignments:
+  class: sfDoctrineRoute
+  url: /task/assignments/:id
+  param:
+    module: task
+    action: assignments
+  options:
+    model: Task
+    type: object
+  requirements:
+    task_id: \d+
+    sf_method: [get]
+
+overview_reset_filter:
+  url: /overview/reset-filter
+  param:
+    module: overview
+    action: resetFilter
+
+overview_filter:
+  url: /overview/filter
+  param:
+    module: overview
+    action: filter
+
+report_reset_filter:
+  url: /report/reset-filter
+  param:
+    module: report
+    action: resetFilter
+
+report_by:
+  url: /report/:by
+  param:
+    module: report
+    action: index
+  requirements:
+    by: user|milestone|module|task|assignment
+    sf_method: get
+
+report_filter:
+  url: /report/filter
+  param:
+    module: report
+    action: filter
+
+switch_inputs_user:
+  url: /switch-inputs-user
+  param:
+    module: input
+    action: switchUser
+
+new_task_assignment:
+  url: /assignment/new/:task_id
+  param:
+    module: assignment
+    action: new
+  requirements:
+    task_id: \d+
+
+ajax_task_sort:
+  url:   /ajax/task/sort
+  param: { module: task, action: sort }
+
+ajax_module_sort:
+  url:   /ajax/module/sort
+  param: { module: module, action: sort }
+
+ajax_milestone_sort:
+  url:   /ajax/milestone/sort
+  param: { module: milestone, action: sort }
+
+project_user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ProjectUser
+    module:               user
+    prefix_path:          /user
+    column:               id
+    with_wildcard_routes: true
+
+assignment:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Assignment
+    module:               assignment
+    prefix_path:          /assignment
+    column:               id
+    with_wildcard_routes: true
+
+task:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Task
+    module:               task
+    prefix_path:          /task
+    column:               id
+    with_wildcard_routes: true
+
+module:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Module
+    module:               module
+    prefix_path:          /module
+    column:               id
+    with_wildcard_routes: true
+
+milestone:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Milestone
+    module:               milestone
+    prefix_path:          /milestone
+    column:               id
+    with_wildcard_routes: true
+
+input_new:
+  url: /input/new/:assignment_id/:date
+  param:
+    module: input
+    action: new
+  requirements:
+    assignment_id: \d+
+    date: \d{4}-\d{2}-\d{2}
+
+input_edit:
+  url: /input/edit/:id
+  param:
+    module: input
+    action: edit
+  requirements:
+    id: \d+
+
+input_delete:
+  url: /input/delete/:id
+  param:
+    module: input
+    action: delete
+  requirements:
+    id: \d+
+
+project:
+  url:   /project
+  param: { module: project, action: index }
+
+report:
+  url:   /report
+  param: { module: report, action: index }
+
+overview:
+  url:   /overview
+  param: { module: overview, action: index }
+
+input_date:
+  url:   /input/:date
+  param:
+    module: input
+    action: index
+  requirements:
+    date: \d{4}-\d{2}-\d{2}
+
+input:
+  url:   /input
+  param: { module: input, action: index }
+
+switch_theme:
+  url: /switch-theme
+  param: { module: theme, action: switch }
+
+switch_project_id:
+  url: /switch-project/:id
+  param:
+    module: project
+    action: switch
+  requirements:
+    id: \d+
+
+switch_project:
+  url: /switch-project
+  param: { module: project, action: switch }
+
+dashboard:
+  url:   /dashboard
+  param: { module: dashboard, action: index }
+
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /request-password
+  param: { module: sfGuardAuth, action: password }
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: dashboard, action: index }

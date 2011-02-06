@@ -1,0 +1,147 @@
+body.login tfoot {
+  background-color: #fff;
+}
+
+#input-form {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#input-form table {
+  margin: 0;
+}
+
+#input-form table td {
+  padding: 3px 5px;
+}
+
+#input-form table td,
+#input-form table label {
+  vertical-align: top;
+}
+
+#input-form #input_time_spent {
+  margin: 0;
+}
+
+#input-form #input_time_left {
+  width: 40px;
+  margin: 0;
+}
+
+#input-form #input_is_completed {
+  margin: 0;
+}
+
+#input-form #input_comment {
+  width: 220px;
+  height: 50px;
+  margin: 0;
+}
+
+#report-by-menu ul {
+  padding-left: 0;
+}
+
+#report-by-menu ul li {
+  display: inline;
+  margin-right: 8px;
+}
+
+#report-by-menu ul li a.selected {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+}
+
+table.overview,
+table.report {
+  border-collapse: collapse;
+}
+
+table.overview td,
+table.report td {
+  border: 1px solid #ccc;
+  padding: 0 4px;
+}
+
+table.overview td.prepend-1,
+table.report td.prepend-1 {
+  padding-left: 20px;
+}
+
+table.overview td.prepend-2,
+table.report td.prepend-2 {
+  padding-left: 40px;
+}
+
+table.report td.prepend-3 {
+  padding-left: 60px;
+}
+
+table.overview a {
+  color: #222;
+}
+
+table.overview a:hover {
+  color: #000;
+}
+
+.messages {
+  padding: 0 .7em;
+  margin-bottom: 10px;
+}
+
+.messages p {
+  margin: 8px 0;
+}
+
+.messages span {
+  float: left;
+  margin-right: .3em;
+}
+
+.positive {
+  color: #00aa00;
+}
+
+.negative {
+  color: #ff0000;
+}
+
+.ui-datepicker td.input-complete a {
+  color: #00bb00;
+}
+
+.ui-datepicker td.input-partial a {
+  color: #ff0000;
+}
+
+.errors label {
+  color: red;
+}
+
+.sf_admin_td_actions {
+  white-space: nowrap;
+}
+
+.sf_admin_td_actions li {
+  display: inline;
+}
+
+.w-auto {
+  width: auto;
+}
+
+body.milestone .sf_admin_list_th_description {
+  width: 380px;
+}
+
+body.milestone .sf_admin_td_actions li,
+body.assignment .sf_admin_td_actions li {
+  display: block;
+}
+
+body.milestone .sf_admin_list th {
+  white-space: nowrap;
+}

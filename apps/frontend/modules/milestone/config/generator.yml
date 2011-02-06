@@ -1,0 +1,27 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Milestone
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          milestone
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:                   false
+
+    config:
+      actions: ~
+      fields:
+        costs:
+          is_partial: true
+      list:
+        max_per_page: 0
+        display: [ =name, start_date, end_date, description ]
+      filter:
+        class: false
+      form:    ~
+      edit:    ~
+      new:     ~

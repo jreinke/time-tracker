@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file original="global" source-language="en" datatype="plaintext" date="2010-08-13T20:53:17Z">
+    <header/>
+    <body>
+      <trans-unit>
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Username or E-Mail</source>
+        <target>Login ou email</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Remember</source>
+        <target>Se souvenir de moi</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Required.</source>
+        <target>Champ obligatoire</target>
+      </trans-unit>
+      <trans-unit>
+        <source>is empty</source>
+        <target>est vide</target>
+      </trans-unit>
+      <trans-unit>
+        <source>yes or no</source>
+        <target>oui ou non</target>
+      </trans-unit>
+      <trans-unit>
+        <source>yes</source>
+        <target>oui</target>
+      </trans-unit>
+      <trans-unit>
+        <source>no</source>
+        <target>non</target>
+      </trans-unit>
+      <trans-unit>
+        <source>from</source>
+        <target>de</target>
+      </trans-unit>
+      <trans-unit>
+        <source>to</source>
+        <target>à</target>
+      </trans-unit>
+      <trans-unit>
+        <source>No result</source>
+        <target>Aucun résultat</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Show</source>
+        <target>Voir</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Assign</source>
+        <target>Affecter</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Move</source>
+        <target>Déplacer</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The username and/or password is invalid.</source>
+        <target>Le compte est invalide</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Logout</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Dashboard</source>
+        <target>Tableau de bord</target>
+      </trans-unit>
+      <trans-unit>
+        <source>My tasks</source>
+        <target>Mes tâches</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Overview</source>
+        <target>Vue d'ensemble</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Reports</source>
+        <target>Rapports</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Assignments</source>
+        <target>Affectations</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Users</source>
+        <target>Utilisateurs</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Tasks</source>
+        <target>Tâches</target>
+      </trans-unit>
+      <trans-unit>
+        <source>No task found</source>
+        <target>Aucune tâche trouvée</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Employee</source>
+        <target>Collaborateur</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Time allocated</source>
+        <target>Charge attribuée</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Estim.</source>
+        <target>Estim.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Alloc.</source>
+        <target>Attrib.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Time spent</source>
+        <target>Charge consommée</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Spent</source>
+        <target>Cons.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Time left</source>
+        <target>Reste à faire</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Left</source>
+        <target>RAF</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Compl.</source>
+        <target>Acqu.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Time completed</source>
+        <target>Charge acquise</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Total</source>
+        <target/>
+      </trans-unit>
+      <trans-unit>
+        <source>No project found</source>
+        <target>Aucun projet trouvé</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Choose a project</source>
+        <target>Sélectionner un projet</target>
+      </trans-unit>
+      <trans-unit>
+        <source>ok</source>
+        <target>ok</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Milestone</source>
+        <target>Lot</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Profile</source>
+        <target>Profil</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Task</source>
+        <target>Tâche</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Inputs</source>
+        <target>Imputations</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Time estimated</source>
+        <target>Charge estimée</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Save</source>
+        <target>Enregistrer</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Cancel</source>
+        <target>Annuler</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Current tasks</source>
+        <target>Tâches en cours</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Waiting tasks</source>
+        <target>Tâches en attente</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Completed tasks</source>
+        <target>Tâches terminées</target>
+      </trans-unit>
+      <trans-unit>
+        <source>My projects</source>
+        <target>Mes projets</target>
+      </trans-unit>
+      <trans-unit>
+        <source>No input found</source>
+        <target>Aucune imputation trouvée</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Project</source>
+        <target>Projet</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit</source>
+        <target>Modifier</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Delete</source>
+        <target>Supprimer</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Are you sure?</source>
+        <target>Êtes-vous sûr ?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Is completed</source>
+        <target>Terminée</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Comment</source>
+        <target>Commentaire</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Milestone List</source>
+        <target>Liste des lots</target>
+      </trans-unit>
+      <trans-unit>
+        <source>New Milestone</source>
+        <target>Nouveau lot</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit Milestone</source>
+        <target>Modification du lot</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Milestones</source>
+        <target>Lots</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Start date</source>
+        <target>Date de début</target>
+      </trans-unit>
+      <trans-unit>
+        <source>End date</source>
+        <target>Date de fin</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You cannot input more than 1 day for a given date.</source>
+        <target>Vous ne pouvez pas imputer plus d'une journée pour une date donnée.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>User</source>
+        <target>Collaborateur</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Priority</source>
+        <target>Priorité</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Task List</source>
+        <target>Liste des tâches</target>
+      </trans-unit>
+      <trans-unit>
+        <source>New Task</source>
+        <target>Nouvelle tâche</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit Task</source>
+        <target>Modification de la tâche</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Module List</source>
+        <target>Liste des modules</target>
+      </trans-unit>
+      <trans-unit>
+        <source>New Module</source>
+        <target>Nouveau module</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit Module</source>
+        <target>Modification du module</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Assignment List</source>
+        <target>Liste des affectations</target>
+      </trans-unit>
+      <trans-unit>
+        <source>New Assignment</source>
+        <target>Nouvelle affectation</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit Assignment</source>
+        <target>Modification de l'affectation</target>
+      </trans-unit>
+      <trans-unit>
+        <source>User List</source>
+        <target>Liste des utilisateurs</target>
+      </trans-unit>
+      <trans-unit>
+        <source>New User</source>
+        <target>Nouvel utilisateur</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit User</source>
+        <target>Modification de l'utilisateur</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Cost</source>
+        <target>Coût</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Costs</source>
+        <target>Coûts</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Time</source>
+        <target>Charge</target>
+      </trans-unit>
+      <trans-unit>
+        <source>An error occured while sorting items</source>
+        <target>Une erreur est survenue lors de l'enregistrement du tri</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Non assigned</source>
+        <target>Non attribué</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Task owner cannot be changed because %user% has already input on the task.</source>
+        <target>Le collaborateur ne peut être modifié car %user% a déjà imputé sur cette tâche.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>"%value%" must be at least %min%.</source>
+        <target>"%value%" doit être au minimum %min%.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>"%value%" is not an integer.</source>
+        <target>"%value%" n'est pas un nombre entier.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>"%value%" is not a number.</source>
+        <target>"%value%" n'est pas un nombre.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You cannot input more than 1 day for a given date.</source>
+        <target>Vous ne pouvez pas imputer plus d'un jour pour une date donnée.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Time left must be zero if task is completed.</source>
+        <target>Le reste à faire doit être 0 si la tâche est terminée.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You cannot assign a task to a user with the same profile twice.</source>
+        <target>Vous ne pouvez pas assigner une tâche 2 fois à la même personne avec le même profil.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>New assignment</source>
+        <target>Nouvelle affectation</target>
+      </trans-unit>
+      <trans-unit>
+        <source>An error occured when deleting the assignment.</source>
+        <target>Une erreur est survenue lors de la suppression de l'affectation.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>No assignment found</source>
+        <target>Aucune affectation trouvée</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Diff.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit>
+        <source>Time estimated - Time allocated</source>
+        <target>Charge estimée - Charge attribuée</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Time allocated: %time%</source>
+        <target>Charge attribuée : %time%</target>
+      </trans-unit>
+      <trans-unit>
+        <source><![CDATA[from %from_date% to %to_date%]]></source>
+        <target><![CDATA[du %from_date% au %to_date%]]></target>
+      </trans-unit>
+      <trans-unit>
+        <source><![CDATA[from %from_date%<br />to %to_date%]]></source>
+        <target><![CDATA[du %from_date%<br />au %to_date%]]></target>
+      </trans-unit>
+      <trans-unit>
+        <source>Input date</source>
+        <target>Date d'imputation</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Invalid.</source>
+        <target>Invalide.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>By milestone</source>
+        <target>Par lot</target>
+      </trans-unit>
+      <trans-unit>
+        <source>By module</source>
+        <target>Par module</target>
+      </trans-unit>
+      <trans-unit>
+        <source>By user</source>
+        <target>Par collaborateur</target>
+      </trans-unit>
+      <trans-unit>
+        <source>By task</source>
+        <target>Par tâche</target>
+      </trans-unit>
+      <trans-unit>
+        <source>By assignment</source>
+        <target>Par affectation</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Choose a theme</source>
+        <target>Choisir un thème</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Progress</source>
+        <target>Avancement</target>
+      </trans-unit>
+      <trans-unit>
+        <source>None input on this project.</source>
+        <target>Aucune imputation trouvée pour ce projet.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="fr" datatype="plaintext" original="messages" date="2010-08-14T16:10:28Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit>
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Username or E-Mail</source>
+        <target>Login ou email</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Remember</source>
+        <target>Se souvenir de moi</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Required.</source>
+        <target>Champ obligatoire</target>
+      </trans-unit>
+      <trans-unit>
+        <source>is empty</source>
+        <target>est vide</target>
+      </trans-unit>
+      <trans-unit>
+        <source>yes or no</source>
+        <target>oui ou non</target>
+      </trans-unit>
+      <trans-unit>
+        <source>yes</source>
+        <target>oui</target>
+      </trans-unit>
+      <trans-unit>
+        <source>no</source>
+        <target>non</target>
+      </trans-unit>
+      <trans-unit>
+        <source>from</source>
+        <target>de</target>
+      </trans-unit>
+      <trans-unit>
+        <source>to</source>
+        <target>à</target>
+      </trans-unit>
+      <trans-unit>
+        <source><![CDATA[from %from_date% to %to_date%]]></source>
+        <target><![CDATA[du %from_date% au %to_date%]]></target>
+      </trans-unit>
+      <trans-unit>
+        <source><![CDATA[from %from_date%<br />to %to_date%]]></source>
+        <target><![CDATA[du %from_date%<br />au %to_date%]]></target>
+      </trans-unit>
+      <trans-unit>
+        <source>Show</source>
+        <target>Voir</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Move</source>
+        <target>Déplacer</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Logout</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Projects</source>
+        <target>Projets</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Milestones</source>
+        <target>Lots</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Modules</source>
+        <target>Modules</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Tasks</source>
+        <target>Tâches</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Assignments</source>
+        <target>Affectations</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Project users</source>
+        <target>Utilisateurs projet</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Users</source>
+        <target>Utilisateurs</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Currencies</source>
+        <target>Devises</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Companies</source>
+        <target>Sociétés</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Customers</source>
+        <target>Clients</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Reset</source>
+        <target>Effacer</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Filter</source>
+        <target>Filtrer</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Company</source>
+        <target>Société</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Customer</source>
+        <target>Client</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Project</source>
+        <target>Projet</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Milestone</source>
+        <target>Lot</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Module</source>
+        <target>Module</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit>
+        <source>User</source>
+        <target>Utilisateur</target>
+      </trans-unit>
+      <trans-unit>
+        <source>First name</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Last name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Email address</source>
+        <target>Adresse email</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Username</source>
+        <target>Nom d'utilisateur</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Is active</source>
+        <target>Activé</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Is super admin</source>
+        <target>Super admin</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Start date</source>
+        <target>Date de début</target>
+      </trans-unit>
+      <trans-unit>
+        <source>End date</source>
+        <target>Date de fin</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Currency</source>
+        <target>Devise</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Priority</source>
+        <target>Priorité</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Comment</source>
+        <target>Commentaire</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Profile</source>
+        <target>Profil</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Symbol</source>
+        <target>Symbole</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Task</source>
+        <target>Tâche</target>
+      </trans-unit>
+      <trans-unit>
+        <source>User</source>
+        <target>Collaborateur</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Time estimated</source>
+        <target>Charge estimée</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Time allocated</source>
+        <target>Charge attribuée</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Is completed</source>
+        <target>Terminée</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Project List</source>
+        <target>Liste des projets</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Milestone List</source>
+        <target>Liste des lots</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Module List</source>
+        <target>Liste des modules</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Assignment List</source>
+        <target>Liste des affectations</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Project user List</source>
+        <target>Liste des utilisateurs projet</target>
+      </trans-unit>
+      <trans-unit>
+        <source>User List</source>
+        <target>Liste des utilisateurs</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Currency List</source>
+        <target>Liste des devises</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Company List</source>
+        <target>Liste des enteprises</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Customer List</source>
+        <target>Liste des clients</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Day hours</source>
+        <target>Heures par jour</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Cost</source>
+        <target>Coût</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The username and/or password is invalid.</source>
+        <target>Le compte est invalide.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Is archived</source>
+        <target>Archivé</target>
+      </trans-unit>
+      <trans-unit>
+        <source>New Project</source>
+        <target>Nouveau projet</target>
+      </trans-unit>
+      <trans-unit>
+        <source>New User</source>
+        <target>Nouvel utilisateur</target>
+      </trans-unit>
+      <trans-unit>
+        <source>New Project user</source>
+        <target>Nouvel utilisateur projet</target>
+      </trans-unit>
+      <trans-unit>
+        <source>New Company</source>
+        <target>Nouvelle société</target>
+      </trans-unit>
+      <trans-unit>
+        <source>New Customer</source>
+        <target>Nouveau client</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit Project</source>
+        <target>Modification d'un projet</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit User</source>
+        <target>Modification d'un utilisateur</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit Project user</source>
+        <target>Modification d'un utilisateur projet</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit Company</source>
+        <target>Modification d'une société</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit Customer</source>
+        <target>Modification d'un client</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Theme</source>
+        <target>Thème</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

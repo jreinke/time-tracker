@@ -14,76 +14,82 @@
     </ul>
   <?php endif; ?>
 </div>
-<?php if (isset($project_report)): ?>
-  <?php
-    $rows = array();
-    $previous_period = null;
-    $previous_time_spent = $time_spent = $total_time_spent = 0;
-    foreach ($project_report->getRawValue() as $row):
-      if (null === $row['period']):
-        continue;
-      endif;
-
-      $time_spent = $row['time_spent'];
-      $previous_time_spent += $time_spent;
-      if ($previous_period != $row['period']):
-        $time_spent = $previous_time_spent;
-        $previous_period = $row['period'];
-      endif;
-
-      @$rows[$row['period']]['time_allocated'] += $row['time_allocated'];
-      @$rows[$row['period']]['time_completed'] += $row['is_completed'] ? $row['time_spent'] : 0;
-      @$rows[$row['period']]['time_spent'] += $time_spent;
-      @$rows[$row['period']]['time_left'] += (null === $row['time_spent'] ? $row['time_allocated'] : $row['time_left']); // if no input, time left is time allocated
-      $total_time_spent = $rows[$row['period']]['time_spent'];
-    endforeach;
-  ?>
+<?php if (isset($report_by_period)): ?>
   <div class="span-14 last">
-    <?php if ($total_time_spent): ?>
-      <div id="chart"></div>
+    <?php if (! empty($report_by_period)): ?>
+      <div id="chart1"></div>
+      <div id="chart2"></div>
       <script type="text/javascript">
         line1 = [];
         categories = [];
-        <?php $i = 0; ?>
-        <?php foreach (array_slice($rows, -8, null, true) as $period => $row): $i++; ?>
+        <?php foreach (array_slice($report_by_period->getRawValue(), -8, null, true) as $period => $row): ?>
+          <?php if (! $period): continue; endif; ?>
           line1.push(<?php echo $row['time_spent'] ?>);
           categories.push('<?php echo substr($period, 0, 4) . ' S' . ltrim(substr($period, 4, 2), '0'); ?>');
         <?php endforeach; ?>
         yticks = [<?php echo implode(', ', range(0, round($total_time_spent))) ?>];
-        var chart;
+        var chart1;
+        var chart2;
         $(document).ready(function() {
-           chart = new Highcharts.Chart({
+           chart1 = new Highcharts.Chart({
               chart: {
-                 renderTo: 'chart',
+                 renderTo: 'chart1',
                  defaultSeriesType: 'line'
               },
-              title: {
-                 text: '<?php echo __('Progress') ?>'
-              },
-              xAxis: {
-                 categories: categories
-              },
-              yAxis: {
-                 title: {
-                    text: '<?php echo __('Days') ?>'
-                 }
-              },
+              title: { text: '<?php echo __('Progress') ?>' },
+              xAxis: { categories: categories },
+              yAxis: { title: { text: '<?php echo __('Days') ?>' } },
               plotOptions: {
                  line: {
-                    dataLabels: {
-                       enabled: true
-                    },
+                    dataLabels: { enabled: true },
                     enableMouseTracking: false
                  }
               },
-              credits: {
-                  enabled: false,
-              },
+              credits: { enabled: false },
               series: [{
                  name: '<?php echo __('Time spent') ?>',
                  data: line1
               }]
            });
+
+          data = [];
+          <?php foreach ($report_by_user->getRawValue() as $row): ?>
+            data.push(['<?php echo $row['name'] ? $row['name'] : __('Non assigned') ?>', <?php echo round($row['time_allocated'] * 100 / $total_time_allocated, 1) ?>]);
+          <?php endforeach; ?>
+          chart2 = new Highcharts.Chart({
+            chart: {
+               renderTo: 'chart2',
+               plotBackgroundColor: null,
+               plotBorderWidth: null,
+               plotShadow: false
+            },
+            title: {
+               text: '<?php echo __('User assignment') ?>'
+            },
+            tooltip: {
+               formatter: function() {
+                  return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+               }
+            },
+            plotOptions: {
+               pie: {
+                  cursor: 'pointer',
+                  size: '50%',
+                  dataLabels: {
+                     enabled: true,
+                     formatter: function() {
+                        return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+                     }
+                  }
+               }
+            },
+            credits: { enabled: false },
+            series: [{
+               type: 'pie',
+               name: 'Browser share',
+               data: data
+            }]
+          });
         });
       </script>
     <?php endif; ?>

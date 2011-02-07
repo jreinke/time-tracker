@@ -12,6 +12,8 @@
  */
 class Project extends BaseProject
 {
+  protected $projectReport = null;
+
   public function __toString()
   {
     return $this->getCode() . ' - ' . $this->getName();
@@ -29,7 +31,17 @@ class Project extends BaseProject
 
   public function getReport($filters = array())
   {
-    return $this->getTable()->getProjectReport($this->getId(), $filters);
+    if (! empty($filters))
+    {
+      return $this->getTable()->getProjectReport($this->getId(), $filters);
+    }
+
+    if (null === $this->projectReport)
+    {
+      $this->projectReport = $this->getTable()->getProjectReport($this->getId(), $filters);
+    }
+
+    return $this->projectReport;
   }
 
   public function getMilestonesProfilesCosts()
@@ -52,5 +64,70 @@ class Project extends BaseProject
   public function getProfiles()
   {
     return $this->getTable()->getProjectProfiles($this->getId());
+  }
+
+  public function getReportBy($col, $filters = array())
+  {
+    $report = $this->getReport($filters);
+    $rows = array();
+
+    foreach ($report as $row)
+    {
+      @$rows[$row[$col]]['name'] = $row['user_id'] ? trim($row['first_name'] . ' ' . $row['last_name']) : '';
+      @$rows[$row[$col]]['time_allocated'] += $row['time_allocated'];
+      @$rows[$row[$col]]['time_completed'] += $row['is_completed'] ? $row['time_spent'] : 0;
+      @$rows[$row[$col]]['time_spent'] += $row['time_spent'];
+      @$rows[$row[$col]]['time_left'] += (null === $row['time_spent'] ? $row['time_allocated'] : $row['time_left']); // if no input, time left is time allocated
+    }
+
+    return $rows;
+  }
+
+  public function getReportByUser($filters = array())
+  {
+    return $this->getReportBy('user_id', $filters);
+  }
+
+  public function getReportByPeriod($filters = array())
+  {
+    $rows = $this->getReportBy('period', $filters);
+    $previousPeriod = null;
+    $previousTimeSpent = $timeSpent = 0;
+
+    foreach ($rows as $period => &$row)
+    {
+      $previousTimeSpent += $row['time_spent'];
+
+      if ($previousPeriod != $period)
+      {
+        $row['time_spent'] = $previousTimeSpent;
+        $previousPeriod = $period;
+      }
+    }
+
+    return $rows;
+  }
+
+  public function getTotalTime($col)
+  {
+    $report = $this->getReport();
+    $totalTime = 0;
+
+    foreach ($report as $row)
+    {
+      $totalTime += $row[$col];
+    }
+
+    return $totalTime;
+  }
+
+  public function getTotalTimeSpent()
+  {
+    return $this->getTotalTime('time_spent');
+  }
+
+  public function getTotalTimeAllocated()
+  {
+    return $this->getTotalTime('time_allocated');
   }
 }

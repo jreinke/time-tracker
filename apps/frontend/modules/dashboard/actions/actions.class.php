@@ -21,7 +21,11 @@ class dashboardActions extends sfActions
 
     if ($this->getUser()->hasCurrentProject())
     {
-      $this->project_report = $this->getUser()->getCurrentProject()->getReport();
+      $project = $this->getUser()->getCurrentProject();
+      $this->report_by_period = $project->getReportByPeriod();
+      $this->report_by_user = $project->getReportByUser();
+      $this->total_time_spent = $project->getTotalTimeSpent();
+      $this->total_time_allocated = $project->getTotalTimeAllocated();
     }
   }
 }

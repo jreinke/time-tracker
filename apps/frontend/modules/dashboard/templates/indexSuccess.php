@@ -1,11 +1,8 @@
-<?php use_javascript('jquery.jqplot.min.js'); ?>
-<?php use_javascript('plugins/jqplot.dateAxisRenderer.min.js'); ?>
-<?php use_javascript('plugins/jqplot.highlighter.min.js'); ?>
-<?php use_stylesheet('jquery.jqplot.min.css'); ?>
+<?php use_javascript('highcharts.js'); ?>
 
 <h1><?php echo __('Dashboard'); ?></h1>
 
-<div class="span-12">
+<div class="span-10">
   <h3><?php echo __('My projects'); ?></h3>
   <?php if (! count($projects)): ?>
     <p><?php echo __('No project found'); ?></p>
@@ -41,31 +38,52 @@
       $total_time_spent = $rows[$row['period']]['time_spent'];
     endforeach;
   ?>
-  <div class="span-12 last">
-    <h3><?php echo __('Progress') ?></h3>
-    <?php if (! $total_time_spent): ?>
-      <p><?php echo __('None input on this project.') ?></p>
-    <?php else: ?>
+  <div class="span-14 last">
+    <?php if ($total_time_spent): ?>
       <div id="chart"></div>
       <script type="text/javascript">
-        $.jqplot.config.enablePlugins = true;
         line1 = [];
-        xticks = [];
+        categories = [];
         <?php $i = 0; ?>
         <?php foreach (array_slice($rows, -8, null, true) as $period => $row): $i++; ?>
-          line1.push([ <?php echo $i ?>, <?php echo $row['time_spent'] ?>]);
-          xticks.push([ <?php echo $i ?>, '<?php echo substr($period, 0, 4) . '&nbsp;S' . ltrim(substr($period, 4, 2), '0'); ?>']);
+          line1.push(<?php echo $row['time_spent'] ?>);
+          categories.push('<?php echo substr($period, 0, 4) . ' S' . ltrim(substr($period, 4, 2), '0'); ?>');
         <?php endforeach; ?>
         yticks = [<?php echo implode(', ', range(0, round($total_time_spent))) ?>];
-        $.jqplot('chart', [line1], {
-          legend: {show: true},
-          series:[
-              {label: '<?php echo __('Time spent') ?>'},
-          ],
-          axes:{
-              xaxis: {ticks:xticks}
-          },
-          highlighter: {sizeAdjust: 7.5, tooltipAxes: 'y', tooltipSeparator: ''},
+        var chart;
+        $(document).ready(function() {
+           chart = new Highcharts.Chart({
+              chart: {
+                 renderTo: 'chart',
+                 defaultSeriesType: 'line'
+              },
+              title: {
+                 text: '<?php echo __('Progress') ?>'
+              },
+              xAxis: {
+                 categories: categories
+              },
+              yAxis: {
+                 title: {
+                    text: '<?php echo __('Days') ?>'
+                 }
+              },
+              plotOptions: {
+                 line: {
+                    dataLabels: {
+                       enabled: true
+                    },
+                    enableMouseTracking: false
+                 }
+              },
+              credits: {
+                  enabled: false,
+              },
+              series: [{
+                 name: '<?php echo __('Time spent') ?>',
+                 data: line1
+              }]
+           });
         });
       </script>
     <?php endif; ?>

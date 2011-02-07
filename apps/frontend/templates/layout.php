@@ -15,7 +15,6 @@
     <?php if ($sf_user->getCulture() == 'fr'): ?>
       <?php echo javascript_include_tag('jquery.ui.datepicker-fr.js'); ?>
     <?php endif; ?>
-    <!--[if IE]><?php echo javascript_include_tag('excanvas.min.js'); ?><![endif]-->
     <?php echo javascript_include_tag('main.js'); ?>
     <?php include_javascripts(); ?>
   </head>

@@ -436,6 +436,10 @@
         <source>None input on this project.</source>
         <target>Aucune imputation trouvée pour ce projet.</target>
       </trans-unit>
+      <trans-unit>
+        <source>Days</source>
+        <target>Jours</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

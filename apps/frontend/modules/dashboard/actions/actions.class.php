@@ -26,6 +26,7 @@ class dashboardActions extends sfActions
       $this->report_by_user = $project->getReportByUser();
       $this->total_time_spent = $project->getTotalTimeSpent();
       $this->total_time_allocated = $project->getTotalTimeAllocated();
+      $this->total_time_estimated = $project->getTotalTimeEstimated();
     }
   }
 }

@@ -74,10 +74,22 @@ class Project extends BaseProject
     foreach ($report as $row)
     {
       @$rows[$row[$col]]['name'] = $row['user_id'] ? trim($row['first_name'] . ' ' . $row['last_name']) : '';
+      @$rows[$row[$col]]['milestone'] = $row['milestone'];
+      @$rows[$row[$col]]['module'] = $row['module'];
+      @$rows[$row[$col]]['task'] = $row['task'];
+      @$rows[$row[$col]]['milestone_id'] = $row['milestone_id'];
+      @$rows[$row[$col]]['module_id'] = $row['module_id'];
+      @$rows[$row[$col]]['task_id'] = $row['task_id'];
+      @$rows[$row[$col]]['user_id'] = $row['user_id'];
+      @$rows[$row[$col]]['assignment_id'] = $row['assignment_id'];
+      @$rows[$row[$col]]['first_name'] = $row['first_name'];
+      @$rows[$row[$col]]['last_name'] = $row['last_name'];
+      @$rows[$row[$col]]['is_completed'] = $row['is_completed'];
+      @$rows[$row[$col]]['time_estimated'] += $row['time_estimated'];
       @$rows[$row[$col]]['time_allocated'] += $row['time_allocated'];
       @$rows[$row[$col]]['time_completed'] += $row['is_completed'] ? $row['time_spent'] : 0;
       @$rows[$row[$col]]['time_spent'] += $row['time_spent'];
-      @$rows[$row[$col]]['time_left'] += (null === $row['time_spent'] ? $row['time_allocated'] : $row['time_left']); // if no input, time left is time allocated
+      @$rows[$row[$col]]['time_left'] += $row['time_left'];
     }
 
     return $rows;
@@ -129,5 +141,10 @@ class Project extends BaseProject
   public function getTotalTimeAllocated()
   {
     return $this->getTotalTime('time_allocated');
+  }
+
+  public function getTotalTimeEstimated()
+  {
+    return $this->getTotalTime('time_estimated');
   }
 }

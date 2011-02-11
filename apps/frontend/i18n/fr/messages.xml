@@ -145,8 +145,12 @@
         <target/>
       </trans-unit>
       <trans-unit>
-        <source>No project found</source>
-        <target>Aucun projet trouvé</target>
+        <source>No project found.</source>
+        <target>Aucun projet trouvé.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Please select a project.</source>
+        <target>Veuillez sélectionner un projet.</target>
       </trans-unit>
       <trans-unit>
         <source>Choose a project</source>
@@ -429,8 +433,8 @@
         <target>Choisir un thème</target>
       </trans-unit>
       <trans-unit>
-        <source>Progress</source>
-        <target>Avancement</target>
+        <source>Project progress</source>
+        <target>Avancement projet</target>
       </trans-unit>
       <trans-unit>
         <source>None input on this project.</source>
@@ -443,6 +447,10 @@
       <trans-unit>
         <source>User assignment</source>
         <target>Affectations</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Employees stats</source>
+        <target>Statistiques collaborateurs</target>
       </trans-unit>
     </body>
   </file>

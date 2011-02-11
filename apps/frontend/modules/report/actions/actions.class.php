@@ -10,6 +10,14 @@
  */
 class reportActions extends sfActions
 {
+  protected static $reportColsMap = array(
+    'user'       => 'user_id',
+    'milestone'  => 'milestone_id',
+    'module'     => 'module_id',
+    'task'       => 'task_id',
+    'assignment' => 'assignment_id',
+  );
+
   public function preExecute()
   {
     if (! $this->getUser()->hasCurrentProject())
@@ -25,7 +33,8 @@ class reportActions extends sfActions
     $project = $this->getUser()->getCurrentProject();
     $this->filters = new ReportFormFilter();
     $this->filters->setDefaults($this->getFilters());
-    $this->report = $project->getReport($this->getFilters());
+    $col = self::$reportColsMap[$this->group_by];
+    $this->report = $project->getReportBy($col, $this->getFilters());
   }
 
   public function executeFilter(sfWebRequest $request)

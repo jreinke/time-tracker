@@ -112,7 +112,7 @@ class ProjectTable extends Doctrine_Table
                 a.time_estimated AS time_estimated,
                 a.time_allocated AS time_allocated,
                 SUM(i.time_spent) AS time_spent')
-      ->addSelect('(SELECT i2.time_left FROM Input i2 WHERE i2.assignment_id = a.id ORDER BY i2.date DESC LIMIT 1) AS time_left')
+      ->addSelect('IFNULL((SELECT i2.time_left FROM Input i2 WHERE i2.assignment_id = a.id ORDER BY i2.date DESC LIMIT 1), a.time_allocated) AS time_left')
       ->from('Assignment a')
       ->leftJoin('a.Inputs i')
       ->innerJoin('a.Task t')

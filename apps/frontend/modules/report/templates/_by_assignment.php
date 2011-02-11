@@ -12,7 +12,7 @@
       @$rows[$row['milestone_id']][$row['module_id']][$row['task_id']][$row['user_id']]['time_allocated'] += $row['time_allocated'];
       @$rows[$row['milestone_id']][$row['module_id']][$row['task_id']][$row['user_id']]['time_completed'] += $row['is_completed'] ? $row['time_spent'] : 0;
       @$rows[$row['milestone_id']][$row['module_id']][$row['task_id']][$row['user_id']]['time_spent'] += $row['time_spent'];
-      @$rows[$row['milestone_id']][$row['module_id']][$row['task_id']][$row['user_id']]['time_left'] += (null === $row['time_spent'] ? $row['time_allocated'] : $row['time_left']); // if no input, time left is time allocated
+      @$rows[$row['milestone_id']][$row['module_id']][$row['task_id']][$row['user_id']]['time_left'] += $row['time_left'];
 
       $milestones_name[$row['milestone_id']] = $row['milestone'];
       $modules_name[$row['module_id']] = $row['module'];

@@ -73,8 +73,10 @@ Project:
       unsigned: true
       default: 8
     is_archived:
-      type: boolean
-      default: false
+      type: integer(1)
+      notnull: true
+      unsigned: true
+      default: 0
   relations:
     Company:
       onDelete: CASCADE
@@ -366,6 +368,8 @@ Predecessor:
 
 Input:
   tableName: tt_input
+  actAs:
+    Timestampable: ~
   columns:
     id:
       primary: true

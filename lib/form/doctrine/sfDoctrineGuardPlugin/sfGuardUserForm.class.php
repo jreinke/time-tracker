@@ -15,15 +15,24 @@ class sfGuardUserForm extends PluginsfGuardUserForm
     unset(
       $this->widgetSchema['algorithm'],
       $this->widgetSchema['salt'],
-      $this->widgetSchema['password'],
       $this->widgetSchema['last_login'],
       $this->widgetSchema['created_at'],
       $this->widgetSchema['updated_at'],
       $this->widgetSchema['groups_list'],
       $this->widgetSchema['permissions_list'],
       $this->widgetSchema['projects_list'],
-      $this->widgetSchema['theme_id'],
       $this->widgetSchema['current_project_id']
+    );
+    unset(
+      $this->validatorSchema['algorithm'],
+      $this->validatorSchema['salt'],
+      $this->validatorSchema['last_login'],
+      $this->validatorSchema['created_at'],
+      $this->validatorSchema['updated_at'],
+      $this->validatorSchema['groups_list'],
+      $this->validatorSchema['permissions_list'],
+      $this->validatorSchema['projects_list'],
+      $this->validatorSchema['current_project_id']
     );
   }
 }

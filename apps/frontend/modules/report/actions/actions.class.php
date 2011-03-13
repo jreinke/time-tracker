@@ -14,6 +14,7 @@ class reportActions extends sfActions
     'user'       => 'user_id',
     'milestone'  => 'milestone_id',
     'module'     => 'module_id',
+    'profile'    => 'profile_id',
     'task'       => 'task_id',
     'assignment' => 'assignment_id',
   );
@@ -34,7 +35,7 @@ class reportActions extends sfActions
     $this->filters = new ReportFormFilter();
     $this->filters->setDefaults($this->getFilters());
     $col = self::$reportColsMap[$this->group_by];
-    $this->report = $project->getReportBy($col, $this->getFilters());
+    $this->report = $project->getReportBy($col, $this->getFilters(), $this->group_by);
   }
 
   public function executeFilter(sfWebRequest $request)

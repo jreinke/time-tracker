@@ -29,16 +29,16 @@ class Project extends BaseProject
     return $this->getTable()->getProjectOverview($this->getId(), $filters);
   }
 
-  public function getReport($filters = array())
+  public function getReport($filters = array(), $sort = false)
   {
     if (! empty($filters))
     {
-      return $this->getTable()->getProjectReport($this->getId(), $filters);
+      return $this->getTable()->getProjectReport($this->getId(), $filters, $sort);
     }
 
     if (null === $this->projectReport)
     {
-      $this->projectReport = $this->getTable()->getProjectReport($this->getId(), $filters);
+      $this->projectReport = $this->getTable()->getProjectReport($this->getId(), $filters, $sort);
     }
 
     return $this->projectReport;
@@ -66,10 +66,15 @@ class Project extends BaseProject
     return $this->getTable()->getProjectProfiles($this->getId());
   }
 
-  public function getReportBy($col, $filters = array())
+  public function getReportBy($col, $filters = array(), $sort = false)
   {
-    $report = $this->getReport($filters);
+    $report = $this->getReport($filters, $sort);
     $rows = array();
+    $profiles = array();
+    foreach (ProfileTable::getInstance()->findAll() as $profile)
+    {
+      $profiles[$profile->getId()] = $profile->__toString();
+    }
 
     foreach ($report as $row)
     {
@@ -82,6 +87,8 @@ class Project extends BaseProject
       @$rows[$row[$col]]['task_id'] = $row['task_id'];
       @$rows[$row[$col]]['user_id'] = $row['user_id'];
       @$rows[$row[$col]]['assignment_id'] = $row['assignment_id'];
+      @$rows[$row[$col]]['profile_id'] = $row['profile_id'];
+      @$rows[$row[$col]]['profile'] = $profiles[$row['profile_id']];
       @$rows[$row[$col]]['first_name'] = $row['first_name'];
       @$rows[$row[$col]]['last_name'] = $row['last_name'];
       @$rows[$row[$col]]['is_completed'] = $row['is_completed'];
@@ -98,6 +105,11 @@ class Project extends BaseProject
   public function getReportByUser($filters = array())
   {
     return $this->getReportBy('user_id', $filters);
+  }
+
+  public function getReportByProfile($filters = array())
+  {
+    return $this->getReportBy('profile_id', $filters);
   }
 
   public function getReportByPeriod($filters = array())

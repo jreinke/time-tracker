@@ -93,7 +93,7 @@ class ProjectTable extends Doctrine_Table
     return $q->setHydrationMode('fetch_assoc')->execute();
   }
 
-  public function getProjectReport($projectId, $filters = array())
+  public function getProjectReport($projectId, $filters = array(), $sort = false)
   {
     $q = Doctrine_Query::create()
       ->select('a.id,
@@ -104,6 +104,7 @@ class ProjectTable extends Doctrine_Table
                 m.id AS milestone_id,
                 mo.id AS module_id,
                 t.id AS task_id,
+                p.id AS profile_id,
                 m.name AS milestone,
                 mo.name AS module,
                 t.name AS task,
@@ -121,8 +122,22 @@ class ProjectTable extends Doctrine_Table
       ->innerJoin('t.Module mo')
       ->leftJoin('a.User u')
       ->where('m.project_id = ?', $projectId)
-      ->groupBy('a.id')
-      ->orderBy('i.date');
+      ->groupBy('a.id');
+
+    switch ($sort)
+    {
+      case 'task':
+      case 'assignment':
+        $q->orderBy('m.position, mo.name, task');
+        break;
+      case 'milestone':
+        $q->orderBy('m.position');
+        break;
+      case 'module':
+        $q->orderBy('module');
+        break;
+      default: $q->orderBy('i.date');
+    }
 
     if (! empty($filters))
     {

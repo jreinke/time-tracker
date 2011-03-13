@@ -73,9 +73,7 @@ Project:
       unsigned: true
       default: 8
     is_archived:
-      type: integer(1)
-      notnull: true
-      unsigned: true
+      type: boolean
       default: 0
   relations:
     Company:

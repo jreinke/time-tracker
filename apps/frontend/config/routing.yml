@@ -48,7 +48,7 @@ report_by:
     module: report
     action: index
   requirements:
-    by: user|milestone|module|task|assignment
+    by: user|milestone|module|profile|task|assignment
     sf_method: get
 
 report_filter:

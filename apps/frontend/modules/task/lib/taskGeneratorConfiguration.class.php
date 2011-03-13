@@ -31,4 +31,26 @@ class taskGeneratorConfiguration extends BaseTaskGeneratorConfiguration
 
     return $form;
   }
+
+  public function getForm($object = null, $options = array())
+  {
+    $form = parent::getForm($object, $options);
+
+    $projectId = sfContext::getInstance()->getUser()->getCurrentProject()->getId();
+
+    // Current project milestones
+    $form->getWidget('milestone_id')->setOption('query', MilestoneTable::getInstance()->getProjectMilestonesQuery($projectId));
+
+    // Current project modules
+    $form->getWidget('module_id')->setOption('query', ModuleTable::getInstance()->getProjectModulesQuery($projectId));
+
+    $form->setWidget('project_id', new sfWidgetFormInputHidden(array('default' => $projectId)));
+    $form->setValidator('project_id', new sfValidatorChoice(array(
+      'choices' => array($projectId),
+      'empty_value' => $projectId,
+      'required' => false
+    )));
+
+    return $form;
+  }
 }

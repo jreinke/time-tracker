@@ -25,7 +25,7 @@
         $total['total'] += ($row['time_allocated'] - $row['time_spent'] - $row['time_left']);
       ?>
       <tr class="<?php echo $i % 2 ? 'odd' : 'even'; ?><?php echo ! $object_id ? ' em quiet' : ''; ?>">
-        <td><?php echo $row[$name_col]; ?></td>
+        <td><?php echo $row[$name_col] ? $row[$name_col] : __('Non assigned'); ?></td>
         <?php if ($sf_user->hasCredential('manager')): ?>
           <td class="right"><?php echo format_time($row['time_estimated']); ?></td>
         <?php endif; ?>

@@ -35,7 +35,7 @@ class milestoneActions extends autoMilestoneActions
       {
         if (isset($positions[$milestone->getId()]))
         {
-          $milestone->setPosition($positions[$milestone->getId()])->save();
+          $milestone->setPosition($positions[$milestone->getId()] + 1)->save();
         }
       }
     }

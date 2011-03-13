@@ -421,6 +421,10 @@
         <target>Par collaborateur</target>
       </trans-unit>
       <trans-unit>
+        <source>By profile</source>
+        <target>Par profil</target>
+      </trans-unit>
+      <trans-unit>
         <source>By task</source>
         <target>Par tâche</target>
       </trans-unit>

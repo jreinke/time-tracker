@@ -20,10 +20,7 @@ body.login tfoot {
   vertical-align: top;
 }
 
-#input-form #input_time_spent {
-  margin: 0;
-}
-
+#input-form #input_time_spent,
 #input-form #input_time_left {
   width: 40px;
   margin: 0;

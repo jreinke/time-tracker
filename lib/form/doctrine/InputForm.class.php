@@ -21,7 +21,7 @@ class InputForm extends BaseInputForm
       $this->validatorSchema['time_left']
     );
 
-    $this->setValidator('time_spent', new sfValidatorNumber(array('min' => 0.1, 'max' => 1)));
+    $this->setValidator('time_spent', new sfValidatorNumber(array('min' => 0, 'max' => 1)));
     $this->setValidator('time_left', new sfValidatorNumber(array('min' => 0)));
 
     $this->setWidget('is_completed', new sfWidgetFormInputCheckbox());

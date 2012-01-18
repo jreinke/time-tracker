@@ -1,5 +1,5 @@
 <?php if (! count($projects)): ?>
-  <p><?php echo __('No project found') ?></p>
+  <p><?php echo __('No project found.') ?></p>
 <?php else: ?>
   <?php echo form_tag('@switch_project') ?>
     <select name="id">

@@ -4,7 +4,7 @@
 # default values
 all:
   sf_guard_plugin:
-    check_password_callable: [myUser, authLDAP]
+    check_password_callable: [ttUser, authLDAP]
     ldap_params:
       # Required host
       host: ldap://ldap.example.com/

@@ -1,0 +1,16 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  sf_guard_plugin:
+    check_password_callable: [myUser, authLDAP]
+    ldap_params:
+      # Required host
+      host: ldap://ldap.example.com/
+      # Optional port config
+      port: 389
+      # Optional protocol version, will match LDAP_OPT_PROTOCOL_VERSION constant
+      protocol: 3
+      # Required base DN, %s will match username or email
+      base_dn: uid=%s,ou=people,dc=domain,dc=com

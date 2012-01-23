@@ -2,6 +2,7 @@
 .settings
 .buildpath
 .project
+/config/app.yml
 /config/databases.yml
 /cache/
 /log/

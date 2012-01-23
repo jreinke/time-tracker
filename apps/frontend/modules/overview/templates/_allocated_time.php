@@ -21,7 +21,7 @@
         <?php
           $pieces = explode('-', $milestone, 2);
           $milestone_id = $pieces[0];
-          $replace_pairs = array();
+          $replace_pairs = array('{{milestone_time}}' => 0);
           ob_start(); // buffering to calculate milestone total profile time
         ?>
         <tr>

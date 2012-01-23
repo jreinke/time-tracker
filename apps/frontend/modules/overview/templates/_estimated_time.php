@@ -24,7 +24,7 @@
         <?php
           $pieces = explode('-', $milestone, 2);
           $milestone_id = $pieces[0];
-          $replace_pairs = array();
+          $replace_pairs = array('{{milestone_time}}' => 0);
           ob_start(); // buffering to calculate milestone total profile time
         ?>
         <tr>
@@ -48,8 +48,12 @@
           <tr>
             <td class="prepend-1 border-right-bold ui-state-active"><?php echo $pieces[1]; ?></td>
             <td colspan="<?php echo count($profiles); ?>" class="ui-state-active"></td>
-            <td class="border-left-bold border-right-bold ui-state-active"></td>
-            <td class="ui-state-active"></td>
+            <?php if (count($profiles)): ?>
+              <td class="border-left-bold border-right-bold ui-state-active"></td>
+              <td class="ui-state-active"></td>
+            <?php else: ?>
+              <td class="border-left-bold ui-state-active"></td>
+            <?php endif; ?>
           </tr>
 
           <?php foreach ($tasks as $task => $array): ?>

@@ -13,9 +13,12 @@
   </head>
   <body class="login">
     <div class="container">
-        <div class="prepend-6 span-12 last">
-          <?php echo $sf_content ?>
-        </div>
+      <div class="prepend-6 span-12 last">
+        <?php echo $sf_content ?>
+      </div>
     </div>
+    <script type="text/javascript">
+      document.getElementById('signin_username').focus();
+    </script>
   </body>
 </html>

@@ -12,7 +12,6 @@ $(document).ready(function() {
   );
   
   $('.ui-widget-overlay').live('click', function() {
-     //$('#assignment-form-dialog').dialog('close');
      $('.ui-dialog-content').dialog('close');
   });
   

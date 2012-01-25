@@ -12,7 +12,8 @@ $(document).ready(function() {
   );
   
   $('.ui-widget-overlay').live('click', function() {
-     $('#assignment-form-dialog').dialog('close');
+     //$('#assignment-form-dialog').dialog('close');
+     $('.ui-dialog-content').dialog('close');
   });
   
   $('#new-assignment-link').click(function(e) {
@@ -21,7 +22,7 @@ $(document).ready(function() {
       $(this).dialog({
         modal: true,
         minWidth: 300
-      })
+      });
     });
   });
   
@@ -31,7 +32,16 @@ $(document).ready(function() {
       $(this).dialog({
         modal: true,
         minWidth: 300
-      })
+      });
+    });
+  });
+  
+  $('.comment-icon').click(function(e) {
+    e.preventDefault();
+    var id = this.id.replace(/[^0-9\.]/g, '');
+    $('#comment-dialog-' + id).dialog({
+      modal: true,
+      minWidth: 300
     });
   });
   

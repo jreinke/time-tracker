@@ -33,7 +33,13 @@
         <tr class="<?php echo $key % 2 ? 'even' : 'odd'; ?><?php echo $current_assignment_id == $assignment->getId() ? ' bold' : '' ?>">
           <td class="<?php echo $assignment->getTask()->getPriority()->getClass(); ?>">&nbsp;</td>
           <td><?php echo $assignment->getTask()->getModule(); ?></td>
-          <td><?php echo link_to('[' . $assignment->getProfile()->getCode() . '] ' . $assignment->getTask()->getName(), sprintf('@input_new?assignment_id=%d&date=%s', $assignment->getId(), $date), array('title' => $assignment->getTask()->getMilestone())); ?></td>
+          <td>
+            <?php echo link_to('[' . $assignment->getProfile()->getCode() . '] ' . $assignment->getTask()->getName(), sprintf('@input_new?assignment_id=%d&date=%s', $assignment->getId(), $date), array('title' => $assignment->getTask()->getMilestone())); ?>
+            <?php if ($comment = $assignment->getTask()->getComment()): ?>
+              <?php echo image_tag('comment.png', array('id' => 'comment_' . $assignment->getTaskId(), 'alt' => __('Comment'), 'title' => __('Comment'), 'class' => 'comment-icon')); ?>
+              <div id="comment-dialog-<?php echo $assignment->getTaskId(); ?>" style="display:none;" title="<?php echo __('Comment'); ?>"><?php echo $comment; ?></div>
+            <?php endif; ?>
+          </td>
           <td class="right"><?php echo format_time($assignment->getTimeAllocated()); ?></td>
           <?php if ($with_time_spent): ?>
             <td class="right"><?php echo format_time($assignment->getTimeSpent()); ?></td>
